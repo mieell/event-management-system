@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  phpunit:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_DATABASE: event_management_test
+          MYSQL_ROOT_PASSWORD: root
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -uroot -proot"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: intl, mbstring, mysqli
+          coverage: none
+      - run: composer install --prefer-dist --no-progress
+      - run: |
+          cp .env.example .env
+          echo "database.tests.hostname = 127.0.0.1" >> .env
+          echo "database.tests.database = event_management_test" >> .env
+          echo "database.tests.username = root" >> .env
+          echo "database.tests.password = root" >> .env
+      - run: vendor/bin/phpunit

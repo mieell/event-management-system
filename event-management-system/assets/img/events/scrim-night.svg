@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Legend Squad Scrim Night</title>
+  <desc id="desc">Original neon esports scrim banner with controller HUD shapes, team lanes, and blue-violet arena lighting.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#090d1f"/>
+      <stop offset=".5" stop-color="#1e1b4b"/>
+      <stop offset="1" stop-color="#075985"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" x2="1">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <filter id="glow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <path d="M0 180 C160 110 254 120 398 198 C540 274 742 286 878 170 C1016 52 1140 78 1280 124 V0 H0Z" fill="#38bdf8" opacity=".08"/>
+  <path d="M0 604 C250 520 360 628 560 565 C750 505 880 412 1280 490 V720 H0Z" fill="#0f172a" opacity=".7"/>
+  <g stroke="#7dd3fc" stroke-width="2" opacity=".22">
+    <path d="M140 0 V720"/>
+    <path d="M340 0 V720"/>
+    <path d="M540 0 V720"/>
+    <path d="M740 0 V720"/>
+    <path d="M940 0 V720"/>
+    <path d="M1140 0 V720"/>
+  </g>
+  <g transform="translate(738 160)" filter="url(#glow)">
+    <rect x="0" y="80" width="370" height="188" rx="58" fill="rgba(255,255,255,.08)" stroke="url(#panel)" stroke-width="7"/>
+    <circle cx="98" cy="174" r="34" fill="#38bdf8"/>
+    <rect x="66" y="166" width="64" height="16" rx="8" fill="#031525"/>
+    <rect x="90" y="142" width="16" height="64" rx="8" fill="#031525"/>
+    <circle cx="250" cy="154" r="19" fill="#a78bfa"/>
+    <circle cx="296" cy="198" r="19" fill="#7dd3fc"/>
+    <path d="M112 80 C150 8 218 8 256 80" fill="none" stroke="#38bdf8" stroke-width="9" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(76 90)">
+    <text x="0" y="86" fill="#e0f2fe" font-size="72" font-family="Poppins,Arial,sans-serif" font-weight="800">LEGEND SQUAD</text>
+    <text x="0" y="144" fill="#7dd3fc" font-size="48" font-family="Poppins,Arial,sans-serif" font-weight="800">SCRIM NIGHT</text>
+    <rect y="188" width="456" height="62" rx="18" fill="rgba(56,189,248,.12)" stroke="#38bdf8"/>
+    <text x="26" y="228" fill="#dbeafe" font-size="24" font-family="Inter,Arial,sans-serif" font-weight="800">ROOM CODES • REFEREES • RESULTS</text>
+  </g>
+  <g fill="none" stroke-linecap="round" stroke-width="8">
+    <path d="M72 560 C214 492 312 644 470 550" stroke="#38bdf8"/>
+    <path d="M118 616 C258 552 360 680 520 598" stroke="#a78bfa"/>
+  </g>
+</svg>

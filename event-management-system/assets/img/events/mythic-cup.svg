@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Mythic Cup Mobile Legends Tournament</title>
+  <desc id="desc">Original neon esports tournament banner with blue arena lighting, trophy silhouette, and lane-inspired motion lines.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#071122"/>
+      <stop offset=".45" stop-color="#102c74"/>
+      <stop offset="1" stop-color="#032235"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" x2="1">
+      <stop offset="0" stop-color="#fbbf24"/>
+      <stop offset=".5" stop-color="#fff7ad"/>
+      <stop offset="1" stop-color="#f59e0b"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <path d="M0 550 C230 430 420 680 640 520 C860 360 1010 470 1280 340 V720 H0Z" fill="#082f49" opacity=".78"/>
+  <g opacity=".28" stroke="#7dd3fc" stroke-width="2">
+    <path d="M-40 130 H1320"/>
+    <path d="M-40 250 H1320"/>
+    <path d="M-40 370 H1320"/>
+    <path d="M220 -40 L620 760"/>
+    <path d="M1120 -40 L740 760"/>
+  </g>
+  <circle cx="1004" cy="184" r="170" fill="#38bdf8" opacity=".12"/>
+  <circle cx="276" cy="548" r="190" fill="#a78bfa" opacity=".16"/>
+  <g filter="url(#glow)" opacity=".95">
+    <path d="M520 170 h240 l-34 118 c-18 62-52 108-86 132v42h88v42H552v-42h88v-42c-34-24-68-70-86-132Z" fill="url(#gold)"/>
+    <path d="M477 210 h-98 c10 96 72 150 157 168" fill="none" stroke="#facc15" stroke-width="34" stroke-linecap="round"/>
+    <path d="M803 210 h98 c-10 96-72 150-157 168" fill="none" stroke="#facc15" stroke-width="34" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(74 86)">
+    <rect width="406" height="72" rx="20" fill="rgba(15,23,42,.62)" stroke="#38bdf8" stroke-width="2"/>
+    <text x="28" y="46" fill="#7dd3fc" font-size="24" font-family="Inter,Arial,sans-serif" font-weight="800">5V5 CAMPUS CHAMPIONSHIP</text>
+  </g>
+  <text x="76" y="268" fill="#e0f2fe" font-size="76" font-family="Poppins,Arial,sans-serif" font-weight="800">MYTHIC CUP</text>
+  <text x="80" y="330" fill="#93c5fd" font-size="32" font-family="Inter,Arial,sans-serif" font-weight="700">Mobile Legends Tournament</text>
+  <g fill="none" stroke="#38bdf8" stroke-width="7" stroke-linecap="round" opacity=".8">
+    <path d="M760 574 H1138"/>
+    <path d="M842 618 H1198"/>
+    <path d="M910 530 H1260"/>
+  </g>
+</svg>

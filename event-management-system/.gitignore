@@ -1,0 +1,16 @@
+vendor/
+.env
+.phpunit.cache/
+writable/cache/*
+writable/debugbar/*
+writable/logs/*
+writable/session/*
+writable/uploads/events/*
+writable/uploads/payments/*
+writable/uploads/profiles/*
+!writable/uploads/events/.gitkeep
+!writable/uploads/payments/.gitkeep
+!writable/uploads/profiles/.gitkeep
+!writable/cache/.gitkeep
+!writable/logs/.gitkeep
+!writable/session/.gitkeep
