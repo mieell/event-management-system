@@ -1,6 +1,9 @@
 vendor/
 .env
 .phpunit.cache/
+null/
+
+# Writable directories
 writable/cache/*
 writable/debugbar/*
 writable/logs/*
@@ -14,3 +17,10 @@ writable/uploads/profiles/*
 !writable/cache/.gitkeep
 !writable/logs/.gitkeep
 !writable/session/.gitkeep
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+Thumbs.db
+.DS_Store
