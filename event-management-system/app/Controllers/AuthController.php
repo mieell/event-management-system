@@ -82,14 +82,36 @@ class AuthController extends BaseController
 
         $role = $this->request->getPost('role');
         $model = new UserModel();
+        
+        $emailAddress = mb_strtolower(trim((string) $this->request->getPost('email')));
+        $fullname = trim((string) $this->request->getPost('fullname'));
+        
         $userId = $model->insert([
-            'fullname' => trim((string) $this->request->getPost('fullname')),
-            'email' => mb_strtolower(trim((string) $this->request->getPost('email'))),
+            'fullname' => $fullname,
+            'email' => $emailAddress,
             'password' => password_hash((string) $this->request->getPost('password'), PASSWORD_DEFAULT),
             'role' => $role === 'organizer' ? 'organizer' : 'attendee',
         ], true);
 
         (new ActivityLogModel())->write((int) $userId, 'Created an ' . $role . ' account.');
+
+        // Send registration email
+        $email = \Config\Services::email();
+        $email->setTo($emailAddress);
+        $email->setSubject('Welcome to Evenira EMS!');
+        
+        // HTML Message
+        $htmlMessage = "<h1>Welcome, " . esc($fullname) . "!</h1><p>Your account has been successfully created. We are excited to have you on board.</p>";
+        $email->setMessage($htmlMessage);
+        
+        // Plain-text Fallback
+        $email->setAltMessage("Welcome, {$fullname}! Your account has been successfully created. We are excited to have you on board.");
+        
+        if ($email->send()) {
+            log_message('info', "Registration email sent successfully to {$emailAddress}.");
+        } else {
+            log_message('error', "Failed to send registration email to {$emailAddress}. Error: " . $email->printDebugger(['headers']));
+        }
 
         return redirect()->to('/login')->with('success', 'Account created. You can sign in now.');
     }
