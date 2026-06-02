@@ -13,7 +13,7 @@ class App extends BaseConfig
      *
      * URL to your CodeIgniter root. Typically, this will be your base URL,
      */
-    public string $baseURL = 'http://evenira.rf.gd/';
+    public string $baseURL = 'http://localhost:8080/';
 
     /**
      * Allowed Hostnames in the Site URL other than the hostname in the baseURL.
