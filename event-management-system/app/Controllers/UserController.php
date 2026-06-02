@@ -62,7 +62,7 @@ class UserController extends BaseController
             'profile_image' => $profileImage,
         ];
 
-        $userModel->update($userId, $payload);
+        $userModel->skipValidation(true)->update($userId, $payload);
         session()->set([
             'fullname' => $payload['fullname'],
             'email' => $payload['email'],
